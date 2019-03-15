@@ -8,7 +8,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cypress:ci": "ng build --prod && run-p --race start:ci cypress:run test",
+    "cypress:run": "cypress run",
+    "start:ci": "http-server ./dist/appv7 -a localhost -p 4200 -c-1"
   },
   "private": true,
   "dependencies": {
@@ -43,6 +46,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "npm-run-all": "^4.1.5",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
