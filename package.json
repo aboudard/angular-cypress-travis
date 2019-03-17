@@ -9,6 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
+    "cypress:local": "run-p start cypress:open",
     "cypress:ci": "ng build --prod && run-p --race start:ci cypress:run test",
     "cypress:run": "cypress run",
     "start:ci": "http-server ./dist/appv7 -a localhost -p 4200 -c-1"
