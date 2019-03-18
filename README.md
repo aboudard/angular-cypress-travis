@@ -6,6 +6,11 @@ Demo project with Angular, running in Travis CI both unit tests and cypress e2e 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
 
+## Cypress reporting configuration
+Using mocha : 5.2.0 / version 6 bugs
+Using mochawesome
+Refer to cypress.json for reporting configuration
+
 ## Karma Configuration
 singleRun: true
 Prevent infinite watch mode on unit tests, ensures Travis CI knows job is done.
