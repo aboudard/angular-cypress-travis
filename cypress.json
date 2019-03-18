@@ -1,1 +1,7 @@
-{}
+{
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "cypress/results"
+  },
+  "projectId": "rrqzk1"
+}
