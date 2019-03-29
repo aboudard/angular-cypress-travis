@@ -21,6 +21,14 @@ script: # the build step
   - npm run cypress:ci
   - npm run buildgp
 
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/appv7
+  on:
+    branch: master
+
 notifications:
   email: # only receive email when the build status changes (someone broke the build!)
     on_failure: change
