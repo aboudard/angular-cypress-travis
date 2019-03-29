@@ -19,6 +19,7 @@ before_script: # commands to run before the build step
 
 script: # the build step
   - npm run cypress:ci
+  - npm run buildgp
 
 notifications:
   email: # only receive email when the build status changes (someone broke the build!)
