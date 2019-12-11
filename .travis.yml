@@ -1,35 +1,31 @@
 sudo: required
 addons:
   chrome: stable
-
 language: node_js
-
 node_js:
-  - node # will use latest node
-
+- node
 branches:
   only:
-    - master
-
-before_script: # commands to run before the build step
-  - 'export DISPLAY=:99.0'
-  - 'sh -e /etc/init.d/xvfb start'
-  - sleep 3 # give xvfb some time to start
-  - npm install -g --silent @angular/cli
-
-script: # the build step
-  - npm run cypress:ci
-  - npm run buildgp
-
+  - master
+before_script:
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sleep 3
+- npm install -g --silent @angular/cli
+script:
+- npm run cypress:ci
+- npm run buildgp
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $GITHUB_TOKEN
+  github_token: "$GITHUB_TOKEN"
   local_dir: dist/appv7
   on:
     branch: master
-
 notifications:
-  email: # only receive email when the build status changes (someone broke the build!)
+  email:
     on_failure: change
     on_success: change
+env:
+  global:
+    secure: oqaxGVkftxfmyevy4nW1cUz39MZ4ViUpDuRyKov0xMV4Qll2uhcrqIS+a/L3eROhfsCeX/mvdNRDm69Qjbh7tyd8ExhbBsJO+mwb59VGkVli7PD5tXBC77fiivz5bDS+sIY56s6A86YlPgUTMxBYeFwL3Aq8TbsG3wMHjFPZIF/uXWeSmaye5wvvrFmzivXDW87oVLcovqTaOgP4qakaEalCO9fxcYK1faf+LPtM9+X4mjFfFtY/BhdWgMNT+lbG4Hkow+S2MSx0L4PH1fcYSSbCAF8RzKpQQmNeLkQLtwSr38sFO11DiWWfH2VlpT2A9aY4EU8P3D9K6sUPLlAeD57uIvkBElRukNGznJ27H37Pd4S6F2TvcKwgwu771PHYEpc0J1z7MIV6oN24Wty5UhGCFE1vMHii9qKmKmZ+FNmgIEhlMz9Iya+glgM0O0mqHEJkMVwYKeajBfo2KZOWprrlwWHU++X745pmQieyd0HA8baNVXeCu9gr0Cl/dhH9d9TWPu2uWQTLOHpXvaZxJLpttV5Bh/+z1Zb7EFkQUoA+SX2WIZhbIdIWkXo3NVXd+g7D3OxLReYRrnzGnfTQYhVdpd9EB5e81C1eA+sIpQgehGiWIkt4jy2GYyn5Qnaj+l22K+PAmGS2s1+JpNKzxdIwq1Q8z/D3lc7xB7kss+g=
