@@ -4,18 +4,16 @@ import { TodoService } from './todo.service';
 import { Todo } from '../model/todo';
 
 describe('TodoService', () => {
-
   let service: TodoService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    providers: [TodoService]
+      providers: [TodoService]
+    });
+    service = TestBed.get(TodoService);
   });
-  service = TestBed.get(TodoService);
-});
 
   it('should be created', () => {
-
     expect(service).toBeTruthy();
   });
 
@@ -28,7 +26,6 @@ describe('TodoService', () => {
     expect(items).not.toBeDefined();
     tick(200);
     expect(items).toBeDefined();
-
   }));
 
   it('should add todoitems correctly', fakeAsync(() => {
@@ -82,5 +79,4 @@ describe('TodoService', () => {
     tick(200);
     expect(items.length).toBe(0);
   }));
-
 });
