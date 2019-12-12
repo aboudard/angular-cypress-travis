@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "buildgp": "ng build --prod --base-href https://aboudard.github.io/angular-cypress-travis/",
-    "test": "ng test",
+    "test": "ng test --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
