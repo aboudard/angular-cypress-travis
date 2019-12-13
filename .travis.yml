@@ -18,6 +18,7 @@ script:
   - ng lint
   - npm run cypress:ci
   - npm run buildgp
+  - npm run test
   - sonar-scanner
 deploy:
   provider: pages
