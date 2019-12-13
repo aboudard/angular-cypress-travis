@@ -17,9 +17,9 @@ before_script:
 script:
   - ng lint
   - npm run cypress:ci
-  - npm run buildgp
   - npm run test
   - sonar-scanner
+  - npm run buildgp
 deploy:
   provider: pages
   skip_cleanup: true
