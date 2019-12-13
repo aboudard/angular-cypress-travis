@@ -40,7 +40,7 @@ export class TodoService {
   }
 
   updateTodo(toUpdate: Todo): Todo {
-    this.existingTodos.map(obj => this.existingTodos.find(o => o.id === obj.id));
+    this.existingTodos.forEach((todo) => this.existingTodos.find(o => o.id === todo.id));
     return toUpdate;
   }
 
