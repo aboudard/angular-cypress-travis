@@ -1,13 +1,13 @@
-import { Component, OnInit } from "@angular/core";
-import { TodoService } from "./shared/todo.service";
-import { Todo } from "./model/todo";
+import { Component, OnInit } from '@angular/core';
+import { TodoService } from './shared/todo.service';
+import { Todo } from './model/todo';
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html"
+  selector: 'app-root',
+  templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
-  title = "appv7";
+  title = 'appv7';
 
   items: Todo[] = [];
   constructor(public todoService: TodoService) {}
