@@ -10,9 +10,9 @@ describe('TodoListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodoListComponent ]
+      declarations: [TodoListComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -25,22 +25,18 @@ describe('TodoListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('method \'markAsDone\' calls eventEmitter', () => {
+  it('method #markAsDone calls eventEmitter', () => {
     spyOn(component.markedAsDone, 'emit');
     const item = new Todo();
     component.markAsDone(item);
-
     expect(component.markedAsDone.emit).toHaveBeenCalledWith(item);
   });
 
   it('should correctly render the passed @Input value', () => {
     const allListItems = fixture.debugElement.queryAll(By.css('li'));
-
     expect(allListItems.length).toBe(0);
     component.items = [new Todo(), new Todo()];
-
     fixture.detectChanges();
-
     expect(fixture.debugElement.queryAll(By.css('li')).length).toBe(2);
   });
 

@@ -17,12 +17,22 @@ describe('TodoService', () => {
     expect(service).toBeTruthy();
   });
 
+  it('should get single item correctly', fakeAsync(() => {
+    let item: Todo;
+    service.addTodo('test value', '0');
+    service.getSingleTodo('0').subscribe((result: Todo) => {
+      item = result;
+    });
+    expect(item).not.toBeDefined();
+    tick(200);
+    expect(item).toBeDefined();
+  }));
+
   it('should get todoitems correctly', fakeAsync(() => {
     let items;
     service.getAllTodos().subscribe((result: Todo[]) => {
       items = result;
     });
-
     expect(items).not.toBeDefined();
     tick(200);
     expect(items).toBeDefined();

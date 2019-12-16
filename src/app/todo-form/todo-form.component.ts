@@ -3,12 +3,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-todo-form',
-  templateUrl: './todo-form.component.html',
-  styleUrls: ['./todo-form.component.scss']
+  templateUrl: './todo-form.component.html'
 })
 export class TodoFormComponent implements OnInit {
 
-  @Output() todoAdded = new EventEmitter();
+  @Output() todoAdded = new EventEmitter<string>();
   form: FormGroup;
 
   constructor() { }

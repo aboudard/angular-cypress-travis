@@ -3,19 +3,14 @@ import { Todo } from '../model/todo';
 
 @Component({
   selector: 'app-todo-list',
-  templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.scss']
+  templateUrl: './todo-list.component.html'
 })
-export class TodoListComponent implements OnInit {
+export class TodoListComponent {
 
   @Input() items: Todo[] = [];
-  @Output() markedAsDone = new EventEmitter();
+  @Output() markedAsDone = new EventEmitter<Todo>();
 
-  constructor() {}
-
-  ngOnInit() {}
-
-  markAsDone(item: Todo) {
+  markAsDone(item: Todo): void {
     this.markedAsDone.emit(item);
   }
 

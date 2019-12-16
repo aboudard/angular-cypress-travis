@@ -10,9 +10,9 @@ describe('TodoFormComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ReactiveFormsModule],
-      declarations: [ TodoFormComponent ]
+      declarations: [TodoFormComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -23,5 +23,15 @@ describe('TodoFormComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('method #addTodo calls eventEmitter', () => {
+    const testValue = 'test value';
+    spyOn(component.todoAdded, 'emit');
+    component.form.patchValue({
+      todoDescription: testValue
+    });
+    component.addTodo();
+    expect(component.todoAdded.emit).toHaveBeenCalledWith(testValue);
   });
 });

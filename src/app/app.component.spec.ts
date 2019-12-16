@@ -12,7 +12,8 @@ const todoServiceStub = {
   },
   getAllTodos() {
     return of([]);
-  }
+  },
+  addTodo(desc: string) { }
 };
 
 describe('AppComponent', () => {
@@ -50,10 +51,18 @@ describe('AppComponent', () => {
     );
   });
 
-  it('should call update service', () => {
+  it('#markAsDone should call update service', () => {
     const todoSpy = spyOn(todoService, 'updateTodo').and.callThrough();
     component.markAsDone(new Todo('0', new Date(), 'test', false));
     fixture.detectChanges();
     expect(todoSpy).toHaveBeenCalled();
+  });
+
+  it('#addTodo should call service', () => {
+    const testValue = 'test value';
+    const addSpy = spyOn(todoService, 'addTodo').and.callThrough();
+    component.addTodo(testValue);
+    fixture.detectChanges();
+    expect(addSpy).toHaveBeenCalledWith(testValue);
   });
 });
