@@ -12,7 +12,7 @@ export class TodoService {
   constructor() { }
 
   getAllTodos(): Observable<Todo[]> {
-    return Observable.create((observer: Observer<Todo[]>) => {
+    return new Observable((observer: Observer<Todo[]>) => {
       setTimeout(() => {
         observer.next(this.existingTodos);
         observer.complete();
@@ -21,7 +21,7 @@ export class TodoService {
   }
 
   getSingleTodo(id: string): Observable<Todo> {
-    return Observable.create((observer: Observer<Todo>) => {
+    return new Observable((observer: Observer<Todo>) => {
       setTimeout(() => {
         observer.next(this.existingTodos.find(x => x.id === id));
         observer.complete();
