@@ -7,7 +7,7 @@ describe('Hello Angular', () => {
   });
 
   it('has 3 links', () => {
-    cy.get('app-root li a').should('have.length', 3);
+    cy.get('#tutos li a').should('have.length', 3);
   });
 
   it('Button has correct naming', () => {
