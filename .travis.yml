@@ -7,8 +7,6 @@ addons:
   chrome: stable
   sonarcloud:
     organization: "aboudard"
-    token:
-      secure: oqaxGVkftxfmyevy4nW1cUz39MZ4ViUpDuRyKov0xMV4Qll2uhcrqIS+a/L3eROhfsCeX/mvdNRDm69Qjbh7tyd8ExhbBsJO+mwb59VGkVli7PD5tXBC77fiivz5bDS+sIY56s6A86YlPgUTMxBYeFwL3Aq8TbsG3wMHjFPZIF/uXWeSmaye5wvvrFmzivXDW87oVLcovqTaOgP4qakaEalCO9fxcYK1faf+LPtM9+X4mjFfFtY/BhdWgMNT+lbG4Hkow+S2MSx0L4PH1fcYSSbCAF8RzKpQQmNeLkQLtwSr38sFO11DiWWfH2VlpT2A9aY4EU8P3D9K6sUPLlAeD57uIvkBElRukNGznJ27H37Pd4S6F2TvcKwgwu771PHYEpc0J1z7MIV6oN24Wty5UhGCFE1vMHii9qKmKmZ+FNmgIEhlMz9Iya+glgM0O0mqHEJkMVwYKeajBfo2KZOWprrlwWHU++X745pmQieyd0HA8baNVXeCu9gr0Cl/dhH9d9TWPu2uWQTLOHpXvaZxJLpttV5Bh/+z1Zb7EFkQUoA+SX2WIZhbIdIWkXo3NVXd+g7D3OxLReYRrnzGnfTQYhVdpd9EB5e81C1eA+sIpQgehGiWIkt4jy2GYyn5Qnaj+l22K+PAmGS2s1+JpNKzxdIwq1Q8z/D3lc7xB7kss+g=
 branches:
   only:
     - master
@@ -18,7 +16,7 @@ script:
   - ng lint
   - npm run cypress:ci
   - npm run test
-  - sonar-scanner
+  - sonar-scanner -Dsonar.verbose=true -X
   - npm run buildgp
 deploy:
   provider: pages
