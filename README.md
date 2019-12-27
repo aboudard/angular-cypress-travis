@@ -4,7 +4,7 @@ https://travis-ci.org/aboudard/angular-cypress-travis
 
 Demo project with Angular, running in Travis CI both unit tests and cypress e2e tests.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
+This project runs with Angular CLI version 8.3.20.
 
 ## Cypress reporting configuration
 Using mocha : 5.2.0 / version 6 bugs
