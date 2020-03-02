@@ -11,7 +11,7 @@ branches:
   only:
     - master
 before_script:
-  - npm install -g --silent @angular/cli@8.3.20
+  - npm install -g --silent @angular/cli@9.0.4
 script:
   - ng lint
   - npm run cypress:ci
