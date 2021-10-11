@@ -7,6 +7,7 @@ addons:
   chrome: stable
   sonarcloud:
     organization: "aboudard"
+    token: ${SONAR_TOKEN}
 branches:
   only:
     - master
